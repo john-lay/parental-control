@@ -12,6 +12,17 @@ namespace ParentalControl
         public MainPage()
         {
             InitializeComponent();
+            RenderWebView();
+        }
+
+        public void RenderWebView()
+        {
+            var script = "javascript:document.getElementById('txt_Username').setAttribute('value','test')";
+            RouterWebView.Source = "http://192.168.1.1";
+            // (object o, WebNavigatedEventArgs navEvent)
+            RouterWebView.Navigated += (obj, navEvent) => {
+                RouterWebView.Eval(script);
+            };
         }
     }
 }

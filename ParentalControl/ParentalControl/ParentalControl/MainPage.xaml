@@ -11,6 +11,7 @@
                 <Label Text="Due date" VerticalOptions="End" />
                 <DatePicker x:Name="Date" />
             </StackLayout>
+            <WebView x:Name="RouterWebView" WidthRequest="640" HeightRequest="480" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
