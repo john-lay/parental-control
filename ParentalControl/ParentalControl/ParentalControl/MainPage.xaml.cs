@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
+using System.IO;
+using System.Reflection;
 
 namespace ParentalControl
 {
@@ -17,12 +14,28 @@ namespace ParentalControl
 
         public void RenderWebView()
         {
-            var script = "javascript:document.getElementById('txt_Username').setAttribute('value','test')";
+            var loginScript = getLoginScript();
+            var script = getLoginScript();
             RouterWebView.Source = "http://192.168.1.1";
             // (object o, WebNavigatedEventArgs navEvent)
             RouterWebView.Navigated += (obj, navEvent) => {
                 RouterWebView.Eval(script);
             };
+        }
+
+        public string getLoginScript()
+        {
+            var stringContent = string.Empty;
+            var assembly = typeof(MainPage).GetTypeInfo().Assembly;
+            //assembly.GetManifestResourceNames(); // Returns the names of all the resources in this assembly.
+            // the properies of the Login.min.js file has been set to Build Action: EmbeddedResource
+            Stream stream = assembly.GetManifestResourceStream("ParentalControl.Scripts.Login.min.js");
+            using (var reader = new StreamReader(stream))
+            {
+                stringContent = reader.ReadToEnd();
+            }
+
+            return stringContent;
         }
     }
 }
