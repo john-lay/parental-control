@@ -22,5 +22,11 @@
     "inputFiles": [
       "Scripts/NavigateEthernet.js"
     ]
+  },
+  {
+    "outputFileName": "Scripts/DeviceInfo.min.js",
+    "inputFiles": [
+      "Scripts/DeviceInfo.js"
+    ]
   }
 ]

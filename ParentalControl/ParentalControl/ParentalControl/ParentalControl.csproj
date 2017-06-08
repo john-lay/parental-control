@@ -42,6 +42,7 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\DeviceModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -55,6 +56,12 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.10.0.2\lib\portable-net45+win8+wpa81+wp8\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <HintPath>..\..\..\..\..\Program Files\VS2017\Common7\IDE\ReferenceAssemblies\Microsoft\Framework\MonoAndroid\v1.0\System.Web.Services.dll</HintPath>
+    </Reference>
     <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xamarin.Forms.2.3.4.224\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Core.dll</HintPath>
     </Reference>
@@ -70,14 +77,24 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="Scripts\DeviceInfo.ts" />
     <TypeScriptCompile Include="Scripts\NavigateEthernet.ts" />
     <TypeScriptCompile Include="Scripts\NavigateLAN.ts" />
     <TypeScriptCompile Include="Scripts\Login.ts" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Scripts\DeviceInfo.js">
+      <DependentUpon>DeviceInfo.ts</DependentUpon>
+    </Content>
+    <EmbeddedResource Include="Scripts\DeviceInfo.min.js">
+      <DependentUpon>DeviceInfo.js</DependentUpon>
+    </EmbeddedResource>
     <Content Include="Scripts\Login.js">
       <DependentUpon>Login.ts</DependentUpon>
     </Content>
+    <None Include="Scripts\DeviceInfo.js.map">
+      <DependentUpon>DeviceInfo.js</DependentUpon>
+    </None>
     <None Include="Scripts\Login.js.map">
       <DependentUpon>Login.js</DependentUpon>
     </None>

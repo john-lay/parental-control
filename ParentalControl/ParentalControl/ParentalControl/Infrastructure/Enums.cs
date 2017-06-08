@@ -5,6 +5,7 @@
         Default = 0,
         Login,
         NavigateLAN,
-        NavigateEthernet
+        NavigateEthernet,
+        DeviceInfo
     }
 }
