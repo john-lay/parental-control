@@ -38,6 +38,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\Enums.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -69,6 +70,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="Scripts\NavigateEthernet.ts" />
+    <TypeScriptCompile Include="Scripts\NavigateLAN.ts" />
     <TypeScriptCompile Include="Scripts\Login.ts" />
   </ItemGroup>
   <ItemGroup>
@@ -80,6 +83,24 @@
     </None>
     <EmbeddedResource Include="Scripts\Login.min.js">
       <DependentUpon>Login.js</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="Scripts\NavigateLAN.js">
+      <DependentUpon>NavigateLAN.ts</DependentUpon>
+    </Content>
+    <None Include="Scripts\NavigateLAN.js.map">
+      <DependentUpon>NavigateLAN.js</DependentUpon>
+    </None>
+    <EmbeddedResource Include="Scripts\NavigateLAN.min.js">
+      <DependentUpon>NavigateLAN.js</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="Scripts\NavigateEthernet.js">
+      <DependentUpon>NavigateEthernet.ts</DependentUpon>
+    </Content>
+    <None Include="Scripts\NavigateEthernet.js.map">
+      <DependentUpon>NavigateEthernet.js</DependentUpon>
+    </None>
+    <EmbeddedResource Include="Scripts\NavigateEthernet.min.js">
+      <DependentUpon>NavigateEthernet.js</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

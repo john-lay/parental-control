@@ -4,5 +4,23 @@
     "inputFiles": [
       "Scripts/Login.js"
     ]
+  },
+  {
+    "outputFileName": "Scripts/Devices.min.js",
+    "inputFiles": [
+      "Scripts/Devices.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/NavigateLAN.min.js",
+    "inputFiles": [
+      "Scripts/NavigateLAN.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/NavigateEthernet.min.js",
+    "inputFiles": [
+      "Scripts/NavigateEthernet.js"
+    ]
   }
 ]
