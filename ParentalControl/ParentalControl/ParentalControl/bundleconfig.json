@@ -28,5 +28,17 @@
     "inputFiles": [
       "Scripts/DeviceInfo.js"
     ]
+  },
+  {
+    "outputFileName": "Scripts/NavigateBasicWiFi.min.js",
+    "inputFiles": [
+      "Scripts/NavigateBasicWiFi.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/NavigateWiFiFiltering.min.js",
+    "inputFiles": [
+      "Scripts/NavigateWiFiFiltering.js"
+    ]
   }
 ]

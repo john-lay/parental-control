@@ -44,6 +44,7 @@
     </Compile>
     <Compile Include="Models\DeviceModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RouterProxy.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MainPage.xaml">
@@ -78,7 +79,9 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\DeviceInfo.ts" />
+    <TypeScriptCompile Include="Scripts\NavigateWiFiFiltering.ts" />
     <TypeScriptCompile Include="Scripts\NavigateEthernet.ts" />
+    <TypeScriptCompile Include="Scripts\NavigateBasicWiFi.ts" />
     <TypeScriptCompile Include="Scripts\NavigateLAN.ts" />
     <TypeScriptCompile Include="Scripts\Login.ts" />
   </ItemGroup>
@@ -101,9 +104,27 @@
     <EmbeddedResource Include="Scripts\Login.min.js">
       <DependentUpon>Login.js</DependentUpon>
     </EmbeddedResource>
+    <Content Include="Scripts\NavigateWiFiFiltering.js">
+      <DependentUpon>NavigateWiFiFiltering.ts</DependentUpon>
+    </Content>
+    <EmbeddedResource Include="Scripts\NavigateWiFiFiltering.min.js">
+      <DependentUpon>NavigateWiFiFiltering.js</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="Scripts\NavigateBasicWiFi.js">
+      <DependentUpon>NavigateBasicWiFi.ts</DependentUpon>
+    </Content>
+    <EmbeddedResource Include="Scripts\NavigateBasicWiFi.min.js">
+      <DependentUpon>NavigateBasicWiFi.js</DependentUpon>
+    </EmbeddedResource>
     <Content Include="Scripts\NavigateLAN.js">
       <DependentUpon>NavigateLAN.ts</DependentUpon>
     </Content>
+    <None Include="Scripts\NavigateWiFiFiltering.js.map">
+      <DependentUpon>NavigateWiFiFiltering.js</DependentUpon>
+    </None>
+    <None Include="Scripts\NavigateBasicWiFi.js.map">
+      <DependentUpon>NavigateBasicWiFi.js</DependentUpon>
+    </None>
     <None Include="Scripts\NavigateLAN.js.map">
       <DependentUpon>NavigateLAN.js</DependentUpon>
     </None>

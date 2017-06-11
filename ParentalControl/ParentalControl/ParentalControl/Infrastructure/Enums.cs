@@ -6,6 +6,8 @@
         Login,
         NavigateLAN,
         NavigateEthernet,
-        DeviceInfo
+        DeviceInfo,
+        NavigateBasicWiFi,
+        NavigateWiFiFiltering
     }
 }
