@@ -18,6 +18,8 @@ namespace ParentalControl
 
         public List<DeviceModel> DeviceList;
 
+        public bool HasScriptError { get; set; }
+
         public Step CurrentStep
         {
             get
@@ -130,6 +132,23 @@ namespace ParentalControl
             {
                 CurrentStep = Step.NavigateWiFiFiltering;
                 return loadScript("NavigateWiFiFiltering.min.js");
+            }
+
+            // step 8: attempt to block a device
+            if (url == "http://192.168.1.1/html/content.asp" && CurrentStep == Step.NavigateWiFiFiltering)
+            {
+                CurrentStep = Step.BlockDevice;
+                return loadScript("BlockDevice.min.js");
+            }
+
+            // error handling
+            if (url.Contains("http://192.168.1.1/html/content.asp?error="))
+            {
+                var jsonEncoded = url.Substring("http://192.168.1.1/html/content.asp?error=".Length);
+                var json = HttpUtility.UrlDecode(jsonEncoded);
+                //var error = JsonConvert.DeserializeObject<JavaScriptErrorModel>(json);
+                // log the error
+                HasScriptError = true;
             }
 
             return string.Empty;

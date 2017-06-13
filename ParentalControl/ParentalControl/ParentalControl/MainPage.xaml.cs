@@ -26,6 +26,13 @@ namespace ParentalControl
                 RouterWebView.Source = "http://192.168.1.1/html/content.asp";
                 // show the list of devices
             }
+
+            if (routerProxy.HasScriptError)
+            {
+                // move the step back one step and try again
+                routerProxy.CurrentStep = routerProxy.CurrentStep - 1;
+                RouterWebView.Source = "http://192.168.1.1/html/content.asp";
+            }
         }
 
         public void RenderWebView()
@@ -37,6 +44,6 @@ namespace ParentalControl
                 var script = routerProxy.getScript(navEvent.Url);
                 RouterWebView.Eval(script);
             };
-        }        
+        }
     }    
 }

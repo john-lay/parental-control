@@ -43,6 +43,7 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\DeviceModel.cs" />
+    <Compile Include="Models\JavaScriptErrorModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RouterProxy.cs" />
   </ItemGroup>
@@ -78,7 +79,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="Scripts\UnblockDevice.ts" />
     <TypeScriptCompile Include="Scripts\DeviceInfo.ts" />
+    <TypeScriptCompile Include="Scripts\BlockDevice.ts" />
     <TypeScriptCompile Include="Scripts\NavigateWiFiFiltering.ts" />
     <TypeScriptCompile Include="Scripts\NavigateEthernet.ts" />
     <TypeScriptCompile Include="Scripts\NavigateBasicWiFi.ts" />
@@ -86,17 +89,35 @@
     <TypeScriptCompile Include="Scripts\Login.ts" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Scripts\UnblockDevice.js">
+      <DependentUpon>UnblockDevice.ts</DependentUpon>
+    </Content>
+    <EmbeddedResource Include="Scripts\UnblockDevice.min.js">
+      <DependentUpon>UnblockDevice.js</DependentUpon>
+    </EmbeddedResource>
     <Content Include="Scripts\DeviceInfo.js">
       <DependentUpon>DeviceInfo.ts</DependentUpon>
     </Content>
     <EmbeddedResource Include="Scripts\DeviceInfo.min.js">
       <DependentUpon>DeviceInfo.js</DependentUpon>
     </EmbeddedResource>
+    <Content Include="Scripts\BlockDevice.js">
+      <DependentUpon>BlockDevice.ts</DependentUpon>
+    </Content>
+    <EmbeddedResource Include="Scripts\BlockDevice.min.js">
+      <DependentUpon>BlockDevice.js</DependentUpon>
+    </EmbeddedResource>
     <Content Include="Scripts\Login.js">
       <DependentUpon>Login.ts</DependentUpon>
     </Content>
+    <None Include="Scripts\UnblockDevice.js.map">
+      <DependentUpon>UnblockDevice.js</DependentUpon>
+    </None>
     <None Include="Scripts\DeviceInfo.js.map">
       <DependentUpon>DeviceInfo.js</DependentUpon>
+    </None>
+    <None Include="Scripts\BlockDevice.js.map">
+      <DependentUpon>BlockDevice.js</DependentUpon>
     </None>
     <None Include="Scripts\Login.js.map">
       <DependentUpon>Login.js</DependentUpon>

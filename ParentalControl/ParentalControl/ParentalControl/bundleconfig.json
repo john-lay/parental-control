@@ -40,5 +40,17 @@
     "inputFiles": [
       "Scripts/NavigateWiFiFiltering.js"
     ]
+  },
+  {
+    "outputFileName": "Scripts/BlockDevice.min.js",
+    "inputFiles": [
+      "Scripts/BlockDevice.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/UnblockDevice.min.js",
+    "inputFiles": [
+      "Scripts/UnblockDevice.js"
+    ]
   }
 ]

@@ -8,6 +8,8 @@
         NavigateEthernet,
         DeviceInfo,
         NavigateBasicWiFi,
-        NavigateWiFiFiltering
+        NavigateWiFiFiltering,
+        BlockDevice,
+        UnblockDevice
     }
 }
