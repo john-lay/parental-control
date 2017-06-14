@@ -141,6 +141,13 @@ namespace ParentalControl
                 return loadScript("BlockDevice.min.js");
             }
 
+            // step 9: attempt to unblock a device
+            if (url == "http://192.168.1.1/html/content.asp" && CurrentStep == Step.BlockDevice)
+            {
+                CurrentStep = Step.UnblockDevice;
+                return loadScript("UnblockDevice.min.js");
+            }
+
             // error handling
             if (url.Contains("http://192.168.1.1/html/content.asp?error="))
             {
